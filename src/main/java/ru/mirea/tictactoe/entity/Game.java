@@ -1,5 +1,6 @@
 package ru.mirea.tictactoe.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.vladmihalcea.hibernate.type.json.JsonBinaryType;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -15,6 +16,7 @@ import javax.persistence.*;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@JsonIgnoreProperties({"hibernateLazyInitializer"})
 @TypeDef(name = "jsonb", typeClass = JsonBinaryType.class)
 @Table(name = "game", schema = "public")
 public class Game {
@@ -36,4 +38,8 @@ public class Game {
 
     @Column(name = "move")
     int move;
+    @Column(name = "ended")
+    boolean ended;
+    @Column(name = "winner")
+    Integer winner;
 }

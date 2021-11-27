@@ -21,9 +21,12 @@ public class GameController {
     }
 
     @PostMapping("/game/join")
-    public Game joinGame(@RequestParam(name = "one_player_id") String onePlayerId, @RequestParam(name = "user_id") String userId) {
-        return service.joinGame(onePlayerId, userId);
+    public Game joinGame(@RequestParam(name = "game_id") long gameId, @RequestParam(name = "user_id") String userId) {
+        return service.joinGame(gameId, userId);
     }
 
-
+    @PostMapping("/game/move")
+    public Game makeMove(@RequestParam(name = "user_id") String userId, @RequestParam(name = "x")  int x, @RequestParam(name = "y") int y) {
+        return service.makeMove(userId, x, y);
+    }
 }

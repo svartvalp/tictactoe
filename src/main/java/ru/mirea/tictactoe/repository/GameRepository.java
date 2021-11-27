@@ -7,4 +7,5 @@ import ru.mirea.tictactoe.entity.Game;
 
 public interface GameRepository extends JpaRepository<Game, Long> {
     Game getByOnePlayerIdOrTwoPlayerId(String onePlayerId, String twoPlayerId);
+    Game getById(long id);
 }
