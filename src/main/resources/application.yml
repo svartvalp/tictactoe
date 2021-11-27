@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/tictactoe
+    username: postgres
+    password: qwerty
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      schema: public
+  jpa:
+    generate-ddl: true
+server:
+  port: 8080
