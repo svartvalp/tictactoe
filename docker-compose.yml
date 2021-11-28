@@ -1,0 +1,11 @@
+version: '3.7'
+services:
+  postgres:
+    image: postgres:11
+    ports:
+      - '5432:5432'
+    environment:
+      POSTGRES_PASSWORD: "qwerty"
+      POSTGRES_USER: "postgres"
+      POSTGRES_TICTACTOE: "express"
+    restart: always
